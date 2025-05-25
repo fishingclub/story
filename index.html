@@ -6,49 +6,123 @@
     <title>My Online Diary</title>
     <script src="https://cdn.tailwindcss.com/3.4.3"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f4f4f4; /* Light gray background */
-            color: #333; /* Dark gray text */
-            line-height: 1.6;
+            background-color: #F0F4F8; /* Softer, cooler background */
+            color: #3A3F4B; /* Slightly softer dark gray for text */
+            line-height: 1.7; /* Increase line-height slightly for readability */
         }
-        /* Custom styles for rounded corners and shadow */
+
+        /* Main blog title */
+        .main-blog-title {
+            font-family: 'Georgia', serif; /* Classic blog title font */
+            color: #2C3E50; /* Darker, sophisticated blue-grey */
+            text-align: center;
+            font-size: 2.5rem; /* Larger title */
+            padding-top: 1rem; /* Added padding top */
+            margin-bottom: 0.5rem; /* Reduced to bring subtitle closer */
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            .main-blog-title {
+                font-size: 3.2rem; /* Even larger on bigger screens */
+                margin-bottom: 0.75rem; /* Reduced */
+            }
+        }
+
+        /* Main blog subtitle */
+        .main-blog-subtitle {
+            font-family: 'Inter', sans-serif;
+            color: #6B7A8F; /* Consistent with date text color */
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400; /* Regular weight */
+            line-height: 1.4;
+            margin-top: 0; 
+            margin-bottom: 2.5rem; /* Space before the first post */
+        }
+        @media (min-width: 640px) {
+            .main-blog-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 3rem; /* Space before content on larger screens */
+            }
+        }
+
         .blog-post {
-            border-radius: 1rem; /* Rounded corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #FFFFFF; /* Keep posts white for clarity */
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* A bit more defined shadow */
+            margin-bottom: 2.5rem; /* Increased spacing between posts */
+            border: 1px solid #DCE1E5; /* Subtle border for definition */
         }
-         .prose {
-            /* Add some basic prose styling for readability */
-            max-width: none; /* Allow content to fill container */
+
+        .blog-post h2 { /* Targets h2 within .blog-post */
+            color: #347AB6; /* A friendly, lively blue for post titles */
+            font-weight: 600; /* Semi-bold from Inter */
+            border-bottom: 2px solid #EAEFF3; /* Light separator for title */
+            padding-bottom: 0.75rem; /* More space under title */
+            margin-bottom: 1.25rem !important; 
+        }
+
+        .blog-post .text-sm.text-gray-500 { /* Targeting the date specifically */
+            color: #6B7A8F; /* More visible, softer blue-grey for dates */
+            font-weight: 600; /* Make date a bit bolder */
+            margin-bottom: 1.5rem !important; 
+        }
+
+        .prose {
+            max-width: none;
         }
         .prose p {
-            margin-bottom: 1em; /* Space between paragraphs */
+            margin-bottom: 1.2em;
+            color: #4A5568; /* Softer text color for prose */
         }
-        .prose h3 {
-            margin-top: 1.5em; /* Space before headings */
-            margin-bottom: 0.5em;
+        .prose h3 { 
+            margin-top: 1.7em;
+            margin-bottom: 0.6em;
+            color: #4A5568;
         }
         .prose ul {
-            margin-bottom: 1em;
+            margin-bottom: 1.2em;
         }
         .prose blockquote {
-             margin-bottom: 1em;
+            margin-bottom: 1.2em;
+            border-left-width: 4px; 
+            border-left-color: #347AB6; 
+            color: #5A6B7C;
+            padding-left: 1em; 
         }
+        .prose a {
+            color: #D64541; 
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .prose a:hover {
+            color: #B7302C; 
+            text-decoration: underline;
+        }
+
         .responsive-img {
-            max-width: 100%; /* Ensure image is responsive */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 0.5rem; /* Slightly rounded corners for image */
-            display: block; /* Center image if it's smaller than container */
-            margin: 1em auto; /* Add some margin and center */
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            display: block;
+            margin: 1.5em auto;
+            border: 1px solid #E1E5EA; 
         }
     </style>
 </head>
 <body class="p-4 sm:p-8">
 
+    <header>
+        <h1 class="main-blog-title">Treadmill</h1>
+        <p class="main-blog-subtitle">Kane Ramsay</p> 
+    </header>
+
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
-            Treadmill
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
+            fuck
         </h2>
         <p class="text-sm text-gray-500 mb-6">
             <time datetime="2014-02-01T19:00:00">February 1, 2014 at 7:00 PM</time>
@@ -67,7 +141,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             More complaining
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -81,7 +155,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             I might be going insane
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -95,7 +169,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             Rant
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -109,7 +183,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             Update
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -123,7 +197,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             I'm alive!
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -137,7 +211,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             Im a cracked out da vinci
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -151,7 +225,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             Update
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -165,7 +239,7 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             See you guys later
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -179,8 +253,8 @@
     </div>
 
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
-            drawing 
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
+            drawing
         </h2>
         <p class="text-sm text-gray-500 mb-6">
             <time datetime="2014-03-15T20:40:00">March 15, 2014 at 7:48 PM</time>
@@ -193,12 +267,8 @@
         </div>
     </div>
 
-</body>
-</html>
-
-
     <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 blog-post mb-8">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-gray-800">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
             Author's Notes
         </h2>
         <p class="text-sm text-gray-500 mb-6">
@@ -206,15 +276,13 @@
         </p>
         <div class="prose max-w-none">
             <p>
-                	This story was unique. The short story was very much inspired by the myth of Sisyphus, more specifically, Sisyphus's punishment of pushing a rock up a hill for eternity, and Albert Camus’s philosophical idea of absurdism as written in his book The Myth of Sisyphus. Absurdism introduces the idea that life is "absurd" and inherently meaningless, and attempting to find meaning in any of it will only result in conflict and frustration; instead, individuals should not only accept this truth, but fight the absurd with every fiber of their body. Camus believes one should not roll over to the absurd, but instead revolt against it, saying, "There is no fate that can not be surmounted by scorn". Using the myth of Sisyphus as a kind of allegory for his idea, he says Sisyphus pushing the stone purely to spite the gods is what gives his life meaning. Albert Camus believes despite the bleak and miserable situation that the former king was in, "One must imagine Sisyphus happy."
+                This story was unique. The short story was very much inspired by the myth of Sisyphus, more specifically, Sisyphus's punishment of pushing a rock up a hill for eternity, and Albert Camus’s philosophical idea of absurdism as written in his book The Myth of Sisyphus. Absurdism introduces the idea that life is "absurd" and inherently meaningless, and attempting to find meaning in any of it will only result in conflict and frustration; instead, individuals should not only accept this truth, but fight the absurd with every fiber of their body. Camus believes one should not roll over to the absurd, but instead revolt against it, saying, "There is no fate that can not be surmounted by scorn". Using the myth of Sisyphus as a kind of allegory for his idea, he says Sisyphus pushing the stone purely to spite the gods is what gives his life meaning. Albert Camus believes despite the bleak and miserable situation that the former king was in, "One must imagine Sisyphus happy."
             </p>
             <p>
-                	I got the idea of using a diary-like format from the book Go Ask Alice, but I originally wanted to film a series of video diary entries of me talking to a camera in my car before I realized that would be very annoying and even more time-consuming, so instead I had Google's Gemini Ai to make an HTML template for an online diary which I can use for the story. At first, I was going to write the code myself, but I quickly remembered that I failed my computer science class twice and can't code for my life. I also got the image of the dog from <a href="https://commons.wikimedia.org/wiki/File:Tahltan_bear_dog_sketch.jpg" target="_blank">here(click)</a>
-.
+                I got the idea of using a diary-like format from the book Go Ask Alice, but I originally wanted to film a series of video diary entries of me talking to a camera in my car before I realized that would be very annoying and even more time-consuming, so instead I had Google's Gemini Ai to make an HTML template for an online diary which I can use for the story. At first, I was going to write the code myself, but I quickly remembered that I failed my computer science class twice and can't code for my life. I also got the image of the dog from <a href="https://commons.wikimedia.org/wiki/File:Tahltan_bear_dog_sketch.jpg" target="_blank">here(click)</a>.
             </p>
         </div>
     </div>
 
-
-
-
+</body>
+</html>
